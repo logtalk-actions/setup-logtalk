@@ -1,0 +1,13 @@
+name: Setup Logtalk
+description: Installs the specified Logtalk version
+inputs:
+  logtalk-version:
+    description: Logtalk version to install
+    required: true
+    default: latest
+runs:
+  using: 'node12'
+  main: 'src/setup-logtalk.js'
+branding:
+  icon: 'box'
+  color: 'blue'

@@ -1,0 +1,25 @@
+{
+  "name": "setup-logtalk",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/logtalk-actions/setup-logtalk.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/logtalk-actions/setup-logtalk/issues"
+  },
+  "homepage": "https://github.com/logtalk-actions/setup-logtalk#readme",
+  "dependencies": {
+    "@actions/core": "^1.1.3",
+    "@actions/exec": "^1.0.1",
+    "@actions/github": "^1.1.0"
+  }
+}

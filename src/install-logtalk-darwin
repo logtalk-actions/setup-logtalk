@@ -1,0 +1,29 @@
+#!/bin/bash
+
+set -eo pipefail
+
+version=$1
+
+if [ "$version" == "latest" ] ; then
+	wget https://logtalk.org/files/versions.txt
+	parsed_version=$(head -n 1 versions.txt)
+else
+	parsed_version=$version
+fi
+file=logtalk-$parsed_version.tar.bz2
+
+cd /tmp
+
+wget https://logtalk.org/files/$file
+sudo tar xjvf $file
+cd logtalk-$parsed_version/scripts
+sudo ./install.sh -p /usr/local
+logtalk_user_setup
+
+# install xsltproc and dot for use with Logtalk tools
+sudo brew install libxslt
+sudo brew install graphviz
+# install Sphinx and dependencies
+sudo pip3 install --upgrade sphinx
+sudo pip3 install --upgrade sphinx_rtd_theme
+sudo pip3 install --upgrade pygments
