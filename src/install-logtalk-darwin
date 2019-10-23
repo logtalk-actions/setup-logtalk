@@ -14,11 +14,11 @@ elif [ "$version" == "latest" ] ; then
 	wget https://logtalk.org/files/versions.txt
 	parsed_version=$(head -n 1 versions.txt)
 	wget https://logtalk.org/files/logtalk-$parsed_version.tar.bz2
-	sudo tar xjvf logtalk-$parsed_version.tar.bz2
+	sudo tar xjf logtalk-$parsed_version.tar.bz2
 	cd logtalk-$parsed_version/scripts
 else 
 	wget https://logtalk.org/files/logtalk-$version.tar.bz2
-	sudo tar xjvf logtalk-$version.tar.bz2
+	sudo tar xjf logtalk-$version.tar.bz2
 	cd logtalk-$version/scripts
 fi
 sudo ./install.sh -p /usr/local
