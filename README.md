@@ -8,7 +8,32 @@ This actions sets up a Logtalk environment for use in workflows. It also makes a
 
 See [action.yml](action.yml). The valid values for `logtalk-version` are `latest` (stable version; default), `git` (current git master branch version), and a specific version (e.g. `3.31.0`).
 
-# Example
+# Examples
+
+## Setup with GNU Prolog backend
+
+```yml
+on: push
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Install GNU Prolog backend
+        uses: logtalk-actions/setup-gnu-prolog@master
+        with:
+          gprolog-version: latest
+      - name: Install Logtalk
+        uses: logtalk-actions/setup-logtalk@master
+        with:
+          logtalk-version: latest
+      - name: Checkout Logtalk application to be tested
+        uses: actions/checkout@v1
+      - name: Run all tests in the application directory
+        run: logtalk_tester -p gnu
+```
+
+## Setup with SWI-Prolog backend
 
 ```yml
 on: push
@@ -25,11 +50,11 @@ jobs:
       - name: Install Logtalk
         uses: logtalk-actions/setup-logtalk@master
         with:
-          logtalk-version: 3.31.0
+          logtalk-version: latest
       - name: Checkout Logtalk application to be tested
         uses: actions/checkout@v1
       - name: Run all tests in the application directory
-        run: logtalk_tester
+        run: logtalk_tester -p swi
 ```
 
 # License
