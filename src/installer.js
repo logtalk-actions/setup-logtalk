@@ -8,12 +8,12 @@ module.exports = {installLogtalk}
  *
  * @param {string} version
  */
-async function installLogtalk(version) {
+async function installLogtalk(version,dependencies) {
   if (process.platform == 'darwin') {
-    await exec(path.join(__dirname, 'install-logtalk-darwin'), [version])
+    await exec(path.join(__dirname, 'install-logtalk-darwin'), [version,dependencies])
   } else if (process.platform == 'linux') {
-    await exec(path.join(__dirname, 'install-logtalk-ubuntu'), [version])
+    await exec(path.join(__dirname, 'install-logtalk-ubuntu'), [version,dependencies])
   } else if (process.platform == 'win32') {
-    await exec(path.join(__dirname, 'install-logtalk-windows'), [version])
+    await exec(path.join(__dirname, 'install-logtalk-windows'), [version,dependencies])
   }
 }

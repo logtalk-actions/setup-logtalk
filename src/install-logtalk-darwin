@@ -24,10 +24,12 @@ fi
 sudo ./install.sh -p /usr/local
 logtalk_user_setup
 
-# install xsltproc and dot for use with Logtalk tools
-brew install libxslt
-brew install graphviz
-# install Sphinx and dependencies
-sudo pip3 install --upgrade sphinx
-sudo pip3 install --upgrade sphinx_rtd_theme
-sudo pip3 install --upgrade pygments
+if [ "$dependencies" == "true" ] ; then
+	# install xsltproc and dot for use with Logtalk tools
+	brew install libxslt
+	brew install graphviz
+	# install Sphinx and dependencies
+	sudo pip3 install --upgrade sphinx
+	sudo pip3 install --upgrade sphinx_rtd_theme
+	sudo pip3 install --upgrade pygments
+fi

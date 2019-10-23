@@ -5,6 +5,10 @@ inputs:
     description: Logtalk version to install
     required: true
     default: latest
+  logtalk-tool-dependencies:
+    description: Install Logtalk tool dependencies
+    required: false
+    default: true
 runs:
   using: 'node12'
   main: 'src/setup-logtalk.js'

@@ -6,7 +6,7 @@ This actions sets up a Logtalk environment for use in workflows. It also makes a
 
 # Usage
 
-See [action.yml](action.yml). The valid values for `logtalk-version` are `latest` (stable version; default), `git` (current git master branch version), and a specific version (e.g. `3.31.0`).
+See [action.yml](action.yml). The valid values for `logtalk-version` are `latest` (stable version; default), `git` (current git master branch version), and a specific version (e.g. `3.31.0`). The `logtalk-tool-dependencies` boolean option (true by default) controls installation of third-party software required by some of the Logtalk tools (notably, Graphviz, Sphinx, and `xsltproc`  for use with the `diagrams`, `lgtdoc`, and `lgtunit` tools).
 
 # Examples
 
@@ -17,7 +17,7 @@ on: push
 
 jobs:
   test:
-    runs-on: ubuntu-latest
+    runs-on: macOS-latest
     steps:
       - name: Install GNU Prolog backend
         uses: logtalk-actions/setup-gnu-prolog@master
