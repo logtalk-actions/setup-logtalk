@@ -4,19 +4,23 @@ set -eo pipefail
 
 version=$1
 
-if [ "$version" == "latest" ] ; then
-	wget https://logtalk.org/files/versions.txt
-	parsed_version=$(head -n 1 versions.txt)
-else
-	parsed_version=$version
-fi
-file=logtalk-$parsed_version.tar.bz2
-
 cd /tmp
 
-wget https://logtalk.org/files/$file
-sudo tar xjvf $file
-cd logtalk-$parsed_version/scripts
+if [ "$version" == "git" ] ; then
+	wget https://github.com/LogtalkDotOrg/logtalk3/archive/master.zip
+	unzip logtalk3-master.zip
+	cd logtalk3-master/scripts
+else if [ "$version" == "latest" ] ; then
+	wget https://logtalk.org/files/versions.txt
+	parsed_version=$(head -n 1 versions.txt)
+	wget https://logtalk.org/files/logtalk-$parsed_version.tar.bz2
+	sudo tar xjvf logtalk-$parsed_version.tar.bz2
+	cd logtalk-$parsed_version/scripts
+else 
+	wget https://logtalk.org/files/logtalk-$version.tar.bz2
+	sudo tar xjvf logtalk-$version.tar.bz2
+	cd logtalk-$version/scripts
+fi
 sudo ./install.sh -p /usr/local
 logtalk_user_setup
 

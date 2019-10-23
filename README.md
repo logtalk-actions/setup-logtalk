@@ -6,7 +6,7 @@ This actions sets up a Logtalk environment for use in workflows. It also makes a
 
 # Usage
 
-See [action.yml](action.yml).
+See [action.yml](action.yml). The valid values for `logtalk-version` are `latest` (stable version; default), `git` (current git master branch version), and a specific version (e.g. `3.31.0`).
 
 # Example
 
