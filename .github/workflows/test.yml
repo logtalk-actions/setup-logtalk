@@ -9,14 +9,13 @@ jobs:
       matrix:
         operating-system: [ubuntu-latest]
     steps:
-      - name: Install SWI-Prolog backend
-        uses: logtalk-actions/setup-swi-prolog@master
+      - name: Install GNU Prolog backend
+        uses: logtalk-actions/setup-gnu-prolog@master
         with:
-          swipl-branch: stable
-          swipl-version: latest
+          gprolog-version: latest
       - name: Install Logtalk
         uses: logtalk-actions/setup-logtalk@master
         with:
-          logtalk-version: git
+          logtalk-version: latest
       - name: Run Logtalk aliases example tests
-        run: cd ~/logtalk/examples/aliases && logtalk_tester -p swi
+        run: cd ~/logtalk/examples/aliases && logtalk_tester -p gnu
