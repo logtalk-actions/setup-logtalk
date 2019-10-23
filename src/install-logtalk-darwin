@@ -10,7 +10,7 @@ if [ "$version" == "git" ] ; then
 	wget https://github.com/LogtalkDotOrg/logtalk3/archive/master.zip
 	unzip logtalk3-master.zip
 	cd logtalk3-master/scripts
-else if [ "$version" == "latest" ] ; then
+elif [ "$version" == "latest" ] ; then
 	wget https://logtalk.org/files/versions.txt
 	parsed_version=$(head -n 1 versions.txt)
 	wget https://logtalk.org/files/logtalk-$parsed_version.tar.bz2
