@@ -35,6 +35,7 @@ if [ "$dependencies" == "true" ] ; then
 	sudo pip3 install --upgrade sphinx_rtd_theme
 	sudo pip3 install --upgrade pygments
 	# install Perl tools to convert TAP report to HTML
+	printf "\n\n" | sudo cpan
 	sudo cpan App::cpanminus
 	sudo cpanm TAP::Formatter::HTML
 fi
