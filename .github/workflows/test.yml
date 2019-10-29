@@ -19,4 +19,7 @@ jobs:
         with:
           logtalk-version: latest
       - name: Run Logtalk aliases example tests
-        run: cd "$LOGTALKUSER/examples/aliases" && logtalk_tester -p swi
+        run: |
+          cd "$LOGTALKUSER/examples/aliases" && logtalk_tester -p swi
+          which cpanm
+          which cpan
