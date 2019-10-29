@@ -8,6 +8,7 @@ module.exports = {installLogtalk}
  * Install Logtalk.
  *
  * @param {string} version
+ * @param {string} dependencies
  */
 async function installLogtalk(version,dependencies) {
   if (process.platform == 'darwin') {
