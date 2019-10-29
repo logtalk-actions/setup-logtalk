@@ -4,19 +4,15 @@ on: [push]
 
 jobs:
   test:
-    runs-on: ${{ matrix.operating-system }}
-    strategy:
-      matrix:
-        operating-system: [ubuntu-latest]
+    runs-on: macOS-latest
     steps:
-      - name: Install SWI-Prolog backend
-        uses: logtalk-actions/setup-swi-prolog@master
+      - name: Install GNU Prolog backend
+        uses: logtalk-actions/setup-gnu-prolog@master
         with:
-          swipl-branch: stable
-          swipl-version: latest
+          gnu-prolog-version: latest
       - name: Install Logtalk
         uses: logtalk-actions/setup-logtalk@master
         with:
           logtalk-version: latest
       - name: Run Logtalk aliases example tests
-        run: cd "$LOGTALKUSER/examples/aliases" && logtalk_tester -p swi
+        run: cd "$LOGTALKUSER/examples/aliases" && logtalk_tester -p gnu

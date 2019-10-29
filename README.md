@@ -1,12 +1,12 @@
 # `setup-logtalk`
 
-This actions sets up a Logtalk environment for use in workflows. This action defines the `LOGTALKHOME` and `LOGTALKUSER` environment variables for followup steps in a workflow. It also makes available by default third-party software that are used by or together with some of the developer tools (notably, `xsltproc`, Graphviz, and Sphinx).
+This actions sets up a Logtalk environment for use in workflows. This action defines the `LOGTALKHOME` and `LOGTALKUSER` environment variables for followup steps in a workflow. It also makes available by default third-party software that are used by or together with some of the developer tools.
 
 ![](https://github.com/logtalk-actions/setup-logtalk/workflows/Test/badge.svg)
 
 ## Usage
 
-See [action.yml](action.yml) for the action metadata. The valid values for the required `logtalk-version` input parameter are `latest` (stable version; default), `git` (current git master branch version), and a specific version (e.g. `3.31.0`). The optional `logtalk-tool-dependencies` boolean input parameter (true by default) controls installation of third-party software required by some of the Logtalk tools (notably, [Graphviz](https://www.graphviz.org), [Sphinx](https://www.sphinx-doc.org/en/master/), `xsltproc`, and [`xunit-viewer`](https://www.npmjs.com/package/xunit-viewer) for use with the `diagrams`, `lgtdoc`, and `lgtunit` tools).
+See [action.yml](action.yml) for the action metadata. The valid values for the required `logtalk-version` input parameter are `latest` (stable version; default), `git` (current git master branch version), and a specific version (e.g. `3.31.0`). The optional `logtalk-tool-dependencies` boolean input parameter (`true` by default) controls installation of third-party software required by some of the Logtalk tools (notably, [Graphviz](https://www.graphviz.org), [Sphinx](https://www.sphinx-doc.org/en/master/), `xsltproc`, and [`xunit-viewer`](https://www.npmjs.com/package/xunit-viewer) for use with the `diagrams`, `lgtdoc`, and `lgtunit` tools).
 
 ## Examples
 
@@ -45,8 +45,8 @@ jobs:
       - name: Install SWI-Prolog backend
         uses: logtalk-actions/setup-swi-prolog@master
         with:
-          swipl-branch: stable
-          swipl-version: latest
+          swi-prolog-branch: stable
+          swi-prolog-version: latest
       - name: Install Logtalk
         uses: logtalk-actions/setup-logtalk@master
         with:

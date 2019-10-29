@@ -25,6 +25,8 @@ sudo ./install.sh -p /usr/local
 logtalk_user_setup
 
 if [ "$dependencies" == "true" ] ; then
+	# install coreutils for the timeout option in logtalk_tester
+	brew install coreutils
 	# install xsltproc and dot for use with Logtalk tools
 	brew install libxslt
 	brew install graphviz

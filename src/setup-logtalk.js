@@ -8,11 +8,11 @@ main().catch(err => {
 async function main() {
   checkPlatform()
 
-  const logtalkSpec = core.getInput('logtalk-version', {required: true})
-  const logtalkToolDependencies = core.getInput('logtalk-tool-dependencies', {required: true})
+  const version      = core.getInput('logtalk-version', {required: true})
+  const dependencies = core.getInput('logtalk-tool-dependencies', {required: false})
 
-  console.log(`##[group]Installing Logtalk ${logtalkSpec}`)
-  await installLogtalk(logtalkSpec,logtalkToolDependencies)
+  console.log(`##[group]Installing Logtalk ${version}`)
+  await installLogtalk(version,dependencies)
   console.log(`##[endgroup]`)
 }
 
