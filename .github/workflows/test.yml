@@ -21,5 +21,6 @@ jobs:
       - name: Run Logtalk aliases example tests
         run: |
           cd "$LOGTALKUSER/examples/aliases" && logtalk_tester -p swi
-          which cpanm
-          which cpan
+          echo `which cpanm`
+          echo `which cpan`
+
