@@ -32,4 +32,6 @@ if [ "$dependencies" == "true" ] ; then
 	sudo pip3 install --upgrade sphinx
 	sudo pip3 install --upgrade sphinx_rtd_theme
 	sudo pip3 install --upgrade pygments
+	# install xunit-viewer to convert xUnit reports to HTML
+	sudo npm i -g xunit-viewer
 fi
