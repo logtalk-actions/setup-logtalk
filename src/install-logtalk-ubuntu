@@ -36,4 +36,7 @@ if [ "$dependencies" == "true" ] ; then
 	sudo pip3 install --upgrade pygments
 	# install xunit-viewer to convert xUnit reports to HTML
 	sudo npm i -g xunit-viewer
+	# install xunit-to-html to convert xUnit reports to HTML
+	cd ~
+	git clone https://github.com/Zir0-93/xunit-to-html.git
 fi

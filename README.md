@@ -6,7 +6,7 @@ This actions sets up a Logtalk environment for use in workflows. This action def
 
 ## Usage
 
-See [action.yml](action.yml) for the action metadata. The valid values for the required `logtalk-version` input parameter are `latest` (stable version; default), `git` (current git master branch version), and a specific version (e.g. `3.31.0`). The optional `logtalk-tool-dependencies` boolean input parameter (`true` by default) controls installation of third-party software required by some of the Logtalk tools (notably, [Graphviz](https://www.graphviz.org), [Sphinx](https://www.sphinx-doc.org/en/master/), `xsltproc`, and [`xunit-viewer`](https://www.npmjs.com/package/xunit-viewer) for use with the `diagrams`, `lgtdoc`, and `lgtunit` tools).
+See [action.yml](action.yml) for the action metadata. The valid values for the required `logtalk-version` input parameter are `latest` (stable version; default), `git` (current git master branch version), and a specific version (e.g. `3.31.0`). The optional `logtalk-tool-dependencies` boolean input parameter (`true` by default) controls installation of third-party software required by some of the Logtalk tools (notably, [Graphviz](https://www.graphviz.org), [Sphinx](https://www.sphinx-doc.org/en/master/), `xsltproc`, [`xunit-viewer`](https://www.npmjs.com/package/xunit-viewer), and [`xunit-to-html`](https://github.com/Zir0-93/xunit-to-html) for use with the `diagrams`, `lgtdoc`, and `lgtunit` tools).
 
 ## Examples
 
