@@ -32,6 +32,12 @@ if [ "$dependencies" == "true" ] ; then
 	# install xsltproc and dot for use with Logtalk tools
 	brew install libxslt
 	brew install graphviz
+	# install basic utilities for thr Logtalk packs tool
+	brew install coreutils
+	brew install libarchive
+	brew install gnupg2
+	brew install curl
+	brew install git
 	# install Sphinx and dependencies
 	sudo pip3 install --upgrade sphinx
 	sudo pip3 install --upgrade sphinx_rtd_theme
