@@ -32,7 +32,7 @@ if [ "$dependencies" == "true" ] ; then
 	sudo apt-get install -y graphviz
 	# install basic utilities for thr Logtalk packs tool
 	sudo apt-get install -y coreutils
-	sudo apt-get install -y libarchive
+	sudo apt-get install -y libarchive-dev
 	sudo apt-get install -y gnupg2
 	sudo apt-get install -y curl
 	sudo apt-get install -y git
