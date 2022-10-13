@@ -10,7 +10,7 @@ inputs:
     required: false
     default: true
 runs:
-  using: 'node12'
+  using: 'node16'
   main: 'src/setup-logtalk.js'
 branding:
   icon: 'box'
