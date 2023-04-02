@@ -9,7 +9,7 @@ cd /tmp
 
 if [ "$version" == "git" ] ; then
 	wget https://github.com/LogtalkDotOrg/logtalk3/archive/master.zip
-	unzip master.zip
+	unzip -q master.zip
 	cd logtalk3-master/scripts
 elif [ "$version" == "latest" ] ; then
 	wget https://logtalk.org/files/versions.txt
