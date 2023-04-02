@@ -8,17 +8,17 @@ dependencies=$2
 cd /tmp
 
 if [ "$version" == "git" ] ; then
-	wget https://github.com/LogtalkDotOrg/logtalk3/archive/master.zip
+	wget -nv https://github.com/LogtalkDotOrg/logtalk3/archive/master.zip
 	unzip -q master.zip
 	cd logtalk3-master/scripts
 elif [ "$version" == "latest" ] ; then
 	wget https://logtalk.org/files/versions.txt
 	parsed_version=$(head -n 1 versions.txt)
-	wget https://logtalk.org/files/logtalk-$parsed_version.tar.bz2
+	wget -nv https://logtalk.org/files/logtalk-$parsed_version.tar.bz2
 	sudo tar xjf logtalk-$parsed_version.tar.bz2
 	cd logtalk-$parsed_version/scripts
 else 
-	wget https://logtalk.org/files/logtalk-$version.tar.bz2
+	wget -nv https://logtalk.org/files/logtalk-$version.tar.bz2
 	sudo tar xjf logtalk-$version.tar.bz2
 	cd logtalk-$version/scripts
 fi
