@@ -8,19 +8,21 @@ dependencies=$2
 cd /tmp
 
 if [ "$version" == "git" ] ; then
-	wget -nv https://github.com/LogtalkDotOrg/logtalk3/archive/master.zip
-	unzip -q master.zip
-	cd logtalk3-master/scripts
+	git clone --depth 1 https://github.com/LogtalkDotOrg/logtalk3
+	cd logtalk3/scripts
+	echo $(git rev-parse HEAD) > /tmp/.logtalk_git_hash
 elif [ "$version" == "latest" ] ; then
 	wget https://logtalk.org/files/versions.txt
 	parsed_version=$(head -n 1 versions.txt)
 	wget -nv https://logtalk.org/files/logtalk-$parsed_version.tar.bz2
 	sudo tar xjf logtalk-$parsed_version.tar.bz2
 	cd logtalk-$parsed_version/scripts
-else 
+	echo "lgt${parsed_version}stable" > /tmp/.logtalk_git_hash
+else
 	wget -nv https://logtalk.org/files/logtalk-$version.tar.bz2
 	sudo tar xjf logtalk-$version.tar.bz2
 	cd logtalk-$version/scripts
+	echo "lgt${version}stable" > /tmp/.logtalk_git_hash
 fi
 sudo ./install.sh -p /usr/local
 logtalk_user_setup

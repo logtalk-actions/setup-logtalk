@@ -1,6 +1,7 @@
 const core = require('@actions/core')
 const {exec} = require('@actions/exec')
 const path = require('path')
+const fs = require('fs')
 
 module.exports = {installLogtalk}
 
@@ -22,4 +23,8 @@ async function installLogtalk(version,dependencies) {
   } else if (process.platform == 'win32') {
     await exec(path.join(__dirname, 'install-logtalk-windows'), [version,dependencies])
   }
+  fs.readFile('/tmp/.logtalk_git_hash', 'utf-8', (err, data) => {
+      if (err) throw err;
+      core.exportVariable('LOGTALK_GIT_HASH', data);
+  })
 }
