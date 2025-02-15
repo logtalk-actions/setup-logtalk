@@ -24,7 +24,7 @@ async function installLogtalk(version,dependencies) {
     await exec(path.join(__dirname, 'install-logtalk-windows'), [version,dependencies])
   }
   fs.readFile('/tmp/.logtalk_git_hash', 'utf-8', (err, data) => {
-      if (err) throw err;
-      core.exportVariable('LOGTALK_GIT_HASH', data);
+    if (err) throw err;
+    core.exportVariable('LOGTALK_GIT_HASH', data);
   })
 }
