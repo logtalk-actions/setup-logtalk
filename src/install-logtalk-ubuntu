@@ -40,7 +40,8 @@ if [ "$dependencies" == "true" ] ; then
 	sudo apt-get install -y wget
 	sudo apt-get install -y git
 	# install Sphinx and dependencies
-	sudo python3 -m pip install --upgrade pip
+	sudo apt update
+	sudo apt install --only-upgrade python3-pip
 	sudo python3 -m pip install --upgrade sphinx
 	sudo python3 -m pip install --upgrade sphinx_rtd_theme
 	sudo python3 -m pip install --upgrade pygments
