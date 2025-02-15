@@ -42,8 +42,6 @@ if [ "$dependencies" == "true" ] ; then
 	brew install wget
 	brew install git
 	# install Sphinx and dependencies
-	sudo apt update
-	sudo apt install --only-upgrade python3-pip
 	sudo python3 -m pip install --upgrade sphinx
 	sudo python3 -m pip install --upgrade sphinx_rtd_theme
 	# install xunit-viewer to convert xUnit reports to HTML
